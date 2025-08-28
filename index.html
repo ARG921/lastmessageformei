@@ -12,7 +12,12 @@
     *{box-sizing:border-box}
     body{margin:0;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;overflow:hidden}
     .app{height:100vh;width:100%;display:grid;grid-template-columns:var(--leftCol) 1fr}
-    @media (max-width:768px){.app{grid-template-columns:1fr;grid-template-rows:45vh 1fr}}
+    @media (max-width:768px){
+      .app{grid-template-columns:1fr;grid-template-rows:45vh 1fr}
+      .credits-content h1{font-size:18px}
+      .credits-content h2{font-size:16px}
+      .credits-content p{font-size:14px}
+    }
     .slideshow{position:relative;background:#000;overflow:hidden;display:flex;align-items:center;justify-content:center;padding-left:var(--leftPadding)}
     .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;display:flex;align-items:center;justify-content:center}
     .slide img{width:auto;height:auto;max-width:90%;max-height:90%;object-fit:scale-down;display:block;margin:0 auto;opacity:0;transition:opacity 1s ease}
@@ -21,9 +26,9 @@
     .credits-wrapper{position:relative;overflow:hidden;background:#000}
     .credits-inner{position:absolute;inset:0;display:flex;flex-direction:column}
     .credits-viewport{position:relative;overflow:hidden;height:100%}
-    .credits-content{width:100%;text-align:center;will-change:transform;opacity:0;transition:opacity 1s ease}
+    .credits-content{width:100%;text-align:center;will-change:transform;opacity:0;transition:opacity 1s ease;line-height:1.4;padding:0 10px}
     .credits-content.show{opacity:1}
-    .credits-content h1,.credits-content h2,.credits-content p{margin:10px 0;font-size:18px}
+    .credits-content h1,.credits-content h2,.credits-content p{margin:10px 0}
     .credits-content h1{font-size:24px;font-weight:bold}
     .progress{position:absolute;left:20px;right:20px;bottom:10px;height:4px;background:rgba(255,255,255,.2)}
     .bar{height:100%;width:0%;background:#fff}
