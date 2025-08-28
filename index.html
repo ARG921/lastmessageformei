@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Last Message</title>
+  <style>
+    :root{
+      --leftCol:minmax(260px,32vw);
+      --leftPadding:40px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;overflow:hidden}
+    .app{height:100vh;width:100%;display:grid;grid-template-columns:var(--leftCol) 1fr}
+    @media (max-width:768px){.app{grid-template-columns:1fr;grid-template-rows:45vh 1fr}}
+    .slideshow{position:relative;background:#000;overflow:hidden;display:flex;align-items:center;justify-content:center;padding-left:var(--leftPadding)}
+    .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;display:flex;align-items:center;justify-content:center}
+    .slide img{width:auto;height:auto;max-width:90%;max-height:90%;object-fit:scale-down;display:block;margin:0 auto;opacity:0;transition:opacity 1s ease}
+    .slideshow.show .slide.active img{opacity:1}
+    .slide.active{opacity:1;z-index:1}
+    .credits-wrapper{position:relative;overflow:hidden;background:#000}
+    .credits-inner{position:absolute;inset:0;display:flex;flex-direction:column}
+    .credits-viewport{position:relative;overflow:hidden;height:100%}
+    .credits-content{width:100%;text-align:center;will-change:transform;opacity:0;transition:opacity 1s ease}
+    .credits-content.show{opacity:1}
+    .credits-content h1,.credits-content h2,.credits-content p{margin:10px 0;font-size:18px}
+    .credits-content h1{font-size:24px;font-weight:bold}
+    .progress{position:absolute;left:20px;right:20px;bottom:10px;height:4px;background:rgba(255,255,255,.2)}
+    .bar{height:100%;width:0%;background:#fff}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="slideshow" id="slideshow">
+      <div class="slide active"><img src="foto1.jpg" alt="Slide 1" /></div>
+      <div class="slide"><img src="foto2.jpg" alt="Slide 2" /></div>
+      <div class="slide"><img src="foto3.jpg" alt="Slide 3" /></div>
+      <div class="slide"><img src="foto4.jpg" alt="Slide 4" /></div>
+      <div class="slide"><img src="foto5.jpg" alt="Slide 5" /></div>
+    </div>
+    <div class="credits-wrapper" id="credits">
+      <div class="credits-inner">
+        <div class="credits-viewport" id="viewport">
+          <div class="credits-content" id="creditsContent">
+            <h1>hi...</h1>
+            <p>gimana ngomongnya ya... haha</p>
+            <p>pertama - tama mau minta maaf dulu karena :</p>
+            <p>1. sudah mengira diri ku spesial di matamu tapi nyatanya aku berbagi ruang dengan orang lain</p>
+            <p>2. diriku terlalu membawa perasaan semua hal yang kamu lakukan kepadaku</p>
+            <p>3. terlalu sayang dengan dirimu, padahal sudah jelas hanya sepihak</p>
+            <p>4. terlalu sering membuat harapan buat diri sendiri padahal dirimu tidak bermaksud membuat ku berharap</p>
+            <p>5. terlalu berharap menunggu kabar darimu padahal ya dirimu pun gak tau kalau aku nungguin</p>
+            <p>aku tau kamu gak jahat, memang aku nya aja yang kelewat berharap</p>
+            <p>dan untuk sikap mu yang ku kira berubah, aku baru sadar itu terjadi karena ya karena emang gaada rasa aja...</p>
+            <p>aku berpikir mungkin memang quiet dumping yang diberikan oleh mu itu merupakan closure darimu</p>
+            <p>i get it now</p>
+            <p>...</p>
+            <p>dari dekat menjadi jauh semuanya sangat terasa ntah memang sengaja atau secara tidak sadar</p>
+            <p>...</p>
+            <p>terlalu sedih mengingat semua hal yang sering kita lakukan perlahan menghilang</p>
+            <p>...</p>
+            <p>ya mungkin ada alasan mu tersendiri, apapun itu, i respect your decision</p>
+            <p>sama mungkin ini bisa membantu dirimu menjawab semua hal hal yang membuatku bertanya - tanya</p>
+            <p>kesimpulannya ya karena memang bukan aku orangnya</p>
+            <p>kalau memang orangnya pasti akan diperjuangkan apapun perbedaannya</p>
+            <p>ya bodohnya aku yang kekeh dengan ideologi bahwa perbedaan buat kita bisa terus bersama hingga selamanya</p>
+            <p>tapi ternyata bisa juga jadi alasan untuk kita tidak bisa bermula</p>
+            <p>aku akan lebih sadar diri sekarang</p>
+            <p>...</p>
+            <p>semoga pilihanmu kedepannya bisa merasakan cinta yang seimbang darimu</p>
+            <p>...</p>
+            <p>mungkin curahan hati ku yang menangis mengemis meminta perhatian dari mu waktu itu hanya bisa kamu terima...</p>
+            <p>...untuk menjadi refleksi di hubungan mu yang lain kedepannya</p>
+            <p>bodohnya diriku menganggap bahwa aku bisa menjadi tempat nyamanmu dan bergema selamanya</p>
+            <p>...</p>
+            <p>btw... titip grup ya... tolong digerakin bersama yang lain</p>
+            <p>mungkin setelah ini aku tidak bisa hadir</p>
+            <p>ntah sampai waktu berapa lama</p>
+            <p>...</p>
+            <p>sikap ku tidak akan berubah ke kamu kalau memang kamu butuh tempat cerita aku akan siap hadir untukmu</p>
+            <p>ya apapun itu kalau kamu butuh aku pasti aku datang</p>
+            <p>...</p>
+            <p></p>
+            <p>setelah percakapan diatas sekarang waktunya ku berterima kasih</p>
+            <p>terima kasih ya sudah pernah membuatku merasa spesial</p>
+            <p>terima kasih atas segala effort, surat dan barang yang pernah kamu berikan kepadaku...</p>
+            <p>...akan ku jaga selalu semua itu</p>
+            <p>terima kasih sudah sempat mau menjadi tempat aku pulang walaupun sementara</p>
+            <p>terima kasih atas segala cerita yang kamu pernah bagikan kepadaku...</p>
+            <p>...kupastikan akan disimpan dan dijaga</p>
+            <p>ya sekali lagi terima kasih untuk segalanya khususnya untuk last hug that u gave to me</p>
+            <p>rasanya sangat menenangkan</p>
+            <p>...</p>
+            <p></p>
+            <p>berat memang untuk membuat ini</p>
+            <p>ya aku tidak tau kedepannya bagaimana</p>
+            <p>tapi semoga kamu bahagia selalu</p>
+            <p>semoga kamu menemukan tujuanmu ya</p>
+            <p>selalu berharap yang terbaik untukmu</p>
+            <p>namamu akan selalu ada dalam doaku</p>
+            <p>...</p>
+            <p>tidak perlu mengharapkan yang sama untukku karena rasanya sudah tidak ada yang terbaik untukku</p>
+            <p>...</p>
+            <p>oh iya ini yang barangnya yang panjang itu kado ultah wkwk</p>
+            <p>dan satu lagi ya untuk kenang - kenangan</p>
+            <p>semoga kamu suka...</p>
+            <p>...dipake ya pleaseeee</p>
+            <p>...</p>
+            <p>dengan ini aku mengucapkan sekali lagi maaf dan terimakasih kepadamu untuk segalanya</p>
+            <p>...</p>
+            <p>senang bisa mencintaimu (tidak tau sampai kapan rasa ini akan ada)</p>
+            <p>...</p>
+            <p>tenang saja aku tidak pergi, aku hanya mulai menerima keadaan</p>
+            <p>...</p>
+            <p>take care ya ✌</p>
+            <p style="margin-top:60px">-acel-</p>
+            <p>...</p>
+            <p>...</p>
+            <p>...</p>
+            <p>...</p>
+            <p>...</p>
+            <p>...</p>
+            <p>...</p>
+            <p>...</p>
+            <p>...</p>
+            <p>kalau mau memberikan jawaban aslinya silahkan ya... aku akan menerimanya dengan baik</p>
+          </div>
+        </div>
+        <div class="progress"><div class="bar" id="progressBar"></div></div>
+      </div>
+    </div>
+  </div>
+  <audio id="bgm" src="sadrah.mp3" preload="auto" loop></audio>
+  <script>
+    const SLIDE_INTERVAL_MS=4000
+    const FALLBACK_DURATION=560
+    const audio=document.getElementById('bgm')
+    audio.volume=0.4
+    const creditsContent=document.getElementById('creditsContent')
+    const viewport=document.getElementById('viewport')
+    const progressBar=document.getElementById('progressBar')
+    const slides=Array.from(document.querySelectorAll('#slideshow .slide'))
+    const slideshow=document.getElementById('slideshow')
+    let slideIdx=0,slideTimer=null
+    function showSlide(i){slides.forEach((s,idx)=>{s.classList.toggle('active',idx===i)})}
+    function startSlideshow(){stopSlideshow();slideTimer=setInterval(()=>{slideIdx=(slideIdx+1)%slides.length;showSlide(slideIdx)},SLIDE_INTERVAL_MS)}
+    function stopSlideshow(){if(slideTimer){clearInterval(slideTimer);slideTimer=null}}
+    let startY=0,endY=0,startTime=0
+    function measure(){const vpH=viewport.clientHeight;const contH=creditsContent.scrollHeight;startY=vpH;endY=-contH-vpH}
+    function progress(){const t=(performance.now()-startTime)/1000;return Math.min(Math.max(t/Math.max(FALLBACK_DURATION,1),0),1)}
+    function tick(){const p=progress();const y=startY+(endY-startY)*p;creditsContent.style.transform=`translateY(${y}px)`;progressBar.style.width=(p*100)+'%';if(p<1){requestAnimationFrame(tick)}else{creditsContent.style.transform=`translateY(${endY}px)`;stopSlideshow()}}
+    function start(){measure();startTime=performance.now();startSlideshow();creditsContent.classList.add('show');slideshow.classList.add('show');requestAnimationFrame(tick)}
+    document.addEventListener('click',()=>{if(audio.paused){audio.play().then(()=>{start()})}}, {once:true})
+    window.addEventListener('resize',measure)
+  </script>
+</body>
+</html>
